@@ -1,0 +1,29 @@
+se caso seja nessaraio usar logica para acesar as sequintes poperações ternarnai basta acresentar na função as sequite cogigo:
+
+        // se desconto for maior que zero? retorne o que esta dentro dos (). Do contrario, retorne: ''.
+
+        {props.desconto>0?():''}
+
+
+lembrando que o sinal de: ? é usado para operações ternarias (onde é nessasario que haja um contrario)
+
+quando guisermos usar uma poeração que não tem a nessesade de uma negativa unsamos os caractes: && Simplificnado ainda mais a escrita do codigo.
+
+        {props.desconto>0&&()}
+
+Se nessesario tambem 'e possivel usar o mesmo operador em ternardo dentro das operações de Tailwind:
+
+
+como esta dentro de uma string temos que colocar dentro de um JavaScrept usando os ${}.
+
+        <div className={`flex flex-col ${} rounded-sm p-1`}>
+
+
+depois demoves nossa formatação condicionar:
+        
+        // Se desconto é maior que zero? borda vernelha 700. Do Contrario: borda azul 700
+        props.desconto>0?'border-red-700':'border-blue-700'
+
+por fim fica assim:
+
+        <div className={`flex flex-col ${props.desconto>0?'border-red-700':'border-blue-700'} rounded-sm p-1`}>

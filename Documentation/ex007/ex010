@@ -1,0 +1,7 @@
+o fluso de um de informações vem sempre de uma finção pai para uma função filho.
+
+portando e sempre intereçante que a pagina formassa as informações para os comoneites.
+
+é possivel faser o inverso mais isso exige uma maior uso da memeoria, alem de não ser uma boa pratica. 
+
+pode ser que em alguma pagina eu use uma forma diferente calcular. portando é sempre melhor que eu passe as funcoes que vam passar as variaveis na pagina e não no componete.

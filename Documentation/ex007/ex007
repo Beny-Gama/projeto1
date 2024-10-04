@@ -1,0 +1,9 @@
+Aula 1 - componetização
+
+detro a pasta src criamos uma pasta chamada components em minusculo.
+
+depois, devemos colocar cada componete comesasndo com lentra maiuscula.
+
+é nessasario que usemos o export default na função que estamos colocando.
+
+

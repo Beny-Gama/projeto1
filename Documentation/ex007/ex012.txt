@@ -1,0 +1,56 @@
+Renderizando componentes com objetos de um array
+
+Para percor um arquivo tipo JSON é nessesario usar as sequintes formatação:
+const produtos=[
+  {
+    produto:'mause',
+    valor:49.9,
+    desconto:0,
+    disponivel:true
+  },
+  {
+    produto:'teclado',
+    valor:69.90,
+    desconto:0,
+    disponivel:true
+  },
+  {
+    produto:'monitor',
+    valor:449.90,
+    desconto:0,
+    disponivel:true
+  },
+  {
+    produto:'CPU',
+    valor:799.99,
+    desconto:50,
+    disponivel:true
+  },
+  {
+    produto:'Cx.som',
+    valor:799.99,
+    desconto:50,
+    disponivel:true
+  },
+]
+
+por ex podemos a .forEach para
+
+mas nesse casso podemos usar as sequintes .map que sera mais simples. ea tribur uma função a isso.
+
+            produtos.map((element:any)=>{
+                return(
+                  <Card produto={element.produto} valor={element.valor} desconto={element.desconto} funcao={caldDesc}/>
+                )
+            })
+
+Tambem Podemos adicionar uma validação para ver ser o pruduto esta disponivel ou não:
+            produtos.map((element:any)=>{
+              if(element.disponivel){
+                return(
+                  <Card produto={element.produto} valor={element.valor} desconto={element.desconto} funcao={caldDesc}/>
+                )
+              }
+            })
+
+OBS: não é nesseario usar os {} para indicar, mas fica da mais facil leitura. 

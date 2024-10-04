@@ -1,0 +1,48 @@
+Tailwind é uma maneria de facilitar o css:
+
+imagine esse function():
+
+function Topo(){
+  return (
+    <div>
+      <div>logo</div>
+      <div>{canal}</div>
+      <div>{nome}</div>
+    </div>
+  )
+}
+
+podemos indentificar essa como atribuissimos funcões de no html:
+
+por ex o classNames:
+
+   flex === display: flex;
+   
+   justify-between === justify-content:  
+   space-between;
+
+   items-center === align-items: center;
+
+   bg-zinc-300 === --tw-bg-opacity: 1;
+
+    background-color: rgb(212 212 216 / var(--tw-bg-opacity)) /* #d4d4d8 */;
+    
+    h-[100px] === height: 100px
+
+portanto podemos avaliar as sequites compararações:
+
+<div className="flex justify-between items-center bg-zinc-300 h-[100px]">
+      <div>logo</div>
+
+
+tambem podemos colocar css nativo no nos nosso projeto.
+basta ir até a pasta globals.css e adcionar o maramentro que vc quer usar:
+
+.subtituloTopo {
+    color: blue;
+    font-weight: bold;
+  }
+
+Ou basta criar um arquivo.css na parta styles e importar na no arquivo globals.css:
+
+@import 'arquivo.css';

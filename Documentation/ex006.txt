@@ -1,0 +1,24 @@
+podemos usar o css in line se nesseario direndo do "html":
+
+style={{}}
+
+    <div style={{color:'black',
+      backgroundColor:'#bbb'}}> React </div>
+
+
+
+Podemos criar uma const e inserir o css:
+
+const testecss={
+    display:'flex',
+    justifayContent:'center',
+    alignItens:'center',
+    color:'#00f',
+    backgraundColor:'#eee',
+    fontSize:'20px',
+}
+
+E depois inserir dentro do nossa tag 'html':
+
+<div style={testecss}>Typescripet</div>
+

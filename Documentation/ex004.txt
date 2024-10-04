@@ -1,0 +1,35 @@
+par adicionar funçoes nas function tendeor da function() pricipal do react.
+basta criar a função fora da funcão pricipal:
+
+const nome='bruno berardo'
+let canal='bgama18'
+
+function Topo(){
+  return (
+    <div>
+      <div>logo</div>
+      <div>{canal}</div>
+      <div>{nome}</div>
+    </div>
+  )
+}
+
+e declarar a dessa forma na function() pricipal:
+
+export default function Home() {
+    return (
+        <main>
+        {Topo()}
+        </main>
+    )}
+
+outra maneira é declarar como uma tag react:
+
+export default function Home() {
+    return (
+        <main>
+        <Topo/>
+        </main>
+    )}
+
+Uma Regra das tags react é é que elas tem que comessar com a letra maiuscula.
