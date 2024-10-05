@@ -1,0 +1,11 @@
+devemos criar a paginas para e o arquivo.txs refetere a pagina dentro da pasta pages. para que isso funcinone deve haver apenas um export default.
+
+quando nessesario comlocar a sequintes linkas as pagainas, basta cirar importar a tag <Link/> no Nest.js
+
+import Link from "next/link"
+
+e adicionar as tag na função pricpal:
+
+        <Link href={'/produtos/produtos'}>
+          Produtos
+        </Link>

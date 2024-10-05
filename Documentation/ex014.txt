@@ -1,0 +1,45 @@
+devemos criar a paginas para e o arquivo.txs refetere a pagina dentro da pasta pages. para que isso funcinone deve haver apenas um export default.
+
+quando nessesario comlocar a sequintes links as paginas, basta cirar importar a tag <Link/> do Nest.js
+
+import Link from "next/link"
+
+e adicionar as tag na função pricpal:
+
+        <Link href={'/produtos/produtos'}>
+          Produtos
+        </Link>
+
+  Tambem é possivel passar paramantros delo link. isso sera ultil mais para frente qunado quisermos passar imformações para o envio de dados.
+
+
+        <Link href={{
+          pathname:'/produtos/produtos',
+          query:{
+            nome:'bruno',
+            curso: 'react next.js'
+          }
+        }}>
+
+Sedermos se striburmos esses funções na paniga direcionada podemos ver que os parametros foram passasdos para LOG da pagina: 
+
+ const router=useRouter()
+  const parametros=router.query
+  console.log(parametros)
+
+
+podemos desestruturar os dados para vapituralos posteriormente.
+
+  const router=useRouter()
+  const parametros=router.query
+  const nome=router.query.name
+  const curso=router.query.curso
+  console.log(nome, curso)
+
+
+outra maneira de fazer isso é atribuindo em uma unica cosnt
+
+  const router=useRouter()
+  const {nome,conso}=router.query
+  console.log(nome)
+  console.log(curso)

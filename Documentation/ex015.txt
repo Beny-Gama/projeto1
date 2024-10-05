@@ -1,0 +1,34 @@
+Se quer colocar outros tags e outros textos dentro de uma das deges que você já criou.
+
+Para isso, dentro do interface Typescript, devemos isntaciar os parametros já existentes children:any
+
+ex:
+    interface CardProps {
+    children:any
+}
+
+Podemos, por exemplo, colocar testo detro de esse arquivo:
+
+<Card> teste </Card>
+
+
+Tembem podemos acresentar outras tags dentro de dessa tag criada anterirmete.
+Ou se nessesario for, podemos colocar outras imanges, link, qualquer outra coisa.
+
+<Card> 
+    teste 
+    <div>
+        teste2
+    </div>
+</Card>
+
+
+Agora para instaciar isso dentro do nosso cogigo, temos que ir dentro da fincão inicial e intaciar como:
+
+export default function Card(props:CardProps){
+    return(
+        <div>
+            <div>{props.children}</div>
+        </div>
+    )
+}
