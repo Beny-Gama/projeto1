@@ -1,0 +1,62 @@
+Para cirar um valor em destaque as segintes alternativas
+
+            <div className="campoForm">
+                <label htmlFor="">Nome</label>
+                <input type="text" />
+            </div>
+            <div className="campoForm">
+                <label htmlFor="">curso</label>
+                <input type="text" />
+            </div>
+
+se nessario podemos comocar um CSS golbal para a nossa pagina:
+
+.campoForm {
+    display: flex; /*ativa o modo flex */
+    flex-direction: column; /*deixa um em baixo do outro*/
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.campoForm label {
+    font-size: large; /*deixa o testo grande*/
+}
+
+
+.campoForm input {
+    border: 1px solid #888;    /*aplica uma borda*/
+    padding: 3px;   /*cria um tamanho interno*/
+    border-radius: 3px;    /*cria uma margem*/
+}
+
+
+Agora temos que aputar esse tipo que esta no nosso <input>:
+O useState é um hook do React. Com ele conseguimos manusear o estado de um componente de forma simples. Este hook funciona muito bem com evento.
+
+Podemos alterar um evento a  mudança de state:
+
+primeito importmaos nosso useState:
+
+import { useState } from "react"
+
+Sequndo adicionamos o uma constante, onde iramos marmazenar o que esta no nosso <input>:
+
+const [nome,setNome]=useState("")
+const [curso,setCurso]=useState("")
+
+já no nosso <input> devemos adicionar as sequintes:
+
+<input type="text" value={nome} onChange={(evt)=>{setNome(evt.target.value)}}/>
+    
+    . <input>     ===  tag html 
+    . type=""     ===  tipo
+    . value={}    ===  armazeda o conteudo do imput
+    . onChange{}  ===  onde obervamos as mudança dentro do codigo
+    . ()=>{}      ===  (arrow function) instacia function .JS
+    . evt         ===  onde colocamos evento
+    . setNome()   ===  cosntante isntaciada anteriomente
+    . evt.target.value === onde efetivamente, pegamos o valor da questão anterior.
+
+
+Agora podemes pegar os dados em tempo real.

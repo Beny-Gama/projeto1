@@ -1,0 +1,77 @@
+Podemos colocar as sequintes funções descritar useState dentro do DisplayState.
+
+ function adicionar() {
+        let c=cont
+        c++
+        setCont(c)
+    }
+
+    function subtrair() {
+        let c=cont
+        c--
+        setCont(c)
+    }
+
+devemos isntaciar a sequite function:
+
+interface DisplayStateProps{
+    valor:number
+    fvalor:any
+}
+
+Com isso, devemos alterar os sequintes codigo no useState:
+
+<DisplayState valor={cont} adicionar={adicionar} subtrair={subtrair}></DisplayState>
+
+para esse:
+
+<DisplayState valor={cont} fvalor={setCont}></DisplayState>
+
+
+
+Devemos simplificar as seguntes altereções no cogigo: <button> simplificando pos não exite mais a nessecidade imortar as fincões anteriores:
+
+    <button className="onClick={props.adicionar}>&#x2b;1</button> 
+    <button onClick={props.subtrair}>&#x2212;1</button>
+para:
+    <button onClick={adicionar}>&#x2b;1</button> 
+    <button onClick={subtrair}>&#x2212;1</button>
+
+
+Com as aterações feitas pelo interface. devemos instacinar as fincões de maniera diferente.
+
+
+function adicionar() {
+        let c=props.valor
+        c++
+        props.fvalor(c)
+    }
+    function subtrair() {
+        let c=props.valor
+        c--
+        props.fvalor(c)
+    }
+
+Com as aterações feitas até então, nosso codigo folta a funcionar normalmnte.
+
+
+
+podemos melhorar nosso codigo dessa manteira: sendo mais apropriado para as fincões do TypeScript:
+
+    function adicionar(tipo:number) {
+        let c=props.valor
+        c+=tipo
+        props.fvalor(c)
+    }
+    function subtrair(tipo:number) {
+        let c=props.valor
+        c-=tipo
+        props.fvalor(c)
+    }
+
+Ou podemes deixar apenas a function adicionar(), e altarar o <button>:
+
+<button onClick={ ()=>{adicionar(+1)} }>&#x2b;1</button> 
+<button onClick={ ()=>{adicionar(-1)} }>&#x2212;1</button>
+
+Com isso podemos deixar nosso codigo mais limpo. e com menos funções. 
