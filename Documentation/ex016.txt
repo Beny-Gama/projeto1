@@ -1,0 +1,53 @@
+Imagine que vc tem uma varivel e vc tenha que rederiar em tempo real na sua pagina. com uma função normal react isso não é possivel.
+
+import { useState } from "react"
+export default function usestate() {
+    let contv=0
+    function contador() {
+        contv++
+    }
+    return(
+        <div>
+            usestate
+            <div>{contv}</div>
+            <button onClick={contador()}>somar</button>
+        </div>
+    )
+}
+
+Para que isso funcione, e nessesario colocar um componete expefico:
+variavel = let
+constante = const
+
+a rotina padram para declaração de um usestate é usando uma variavel:
+
+let [cont,setCont]=useState<number>(0)
+
+    function contador() {
+        setCont(cont++)
+    } 
+
+Outra forma de usar o usestate é com uma constate:
+
+const [cont,setCont]=useState<number>(0)
+
+    function contador() {
+        let c=cont
+        c++
+        setCont(c)
+    }
+
+
+Tambem podemos modulariar o uso do state. Se criarmos uma pasta nos componets
+é e fizermos a mesma stritira para um pomente react.
+
+export default function DisplayState(props:any) {
+    return(
+        <div>{props.val}</div>
+    )
+}
+
+Depois podemos isntaciar isso na pangina sequite como props, e não como childerem.
+
+import DisplayState from "@/components/DisplayState"
+<DisplayState valor={cont}></DisplayState>

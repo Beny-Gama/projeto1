@@ -1,0 +1,29 @@
+tempos que entender que melhor maneira de escrever é particionado o nosso particondado nos nossos compontes. alem de ser a melhor maneira de escrever cogigo para o react.
+
+por ex o cogigo de função de <button> tem toda uma regra de negocio para funcionar, ao inves de fazer um <button> novo para cada situação. podemos reutilizar o mesmo <button> com as mesma regras de negocio para cituações diferentes.
+
+Essa <div> com <button> abaixo, estava na pasta useState.tsx sendo que nessa situação, o melhor mareir de isntaciar seira do DisplayState.tsx
+
+<div>    
+    <button onClick={adionar}>somar</button> 
+    <button onClick={subtrair}>subtrair</button>
+</div>
+
+como estamos usando TypeScript, temos que intaciar na interface.
+
+interface DisplayStateProps{
+    valor:number
+    adicionar:any
+    subtrair:any
+}
+
+depois aterar <button> descritas:
+
+<div>    
+    <button onClick={props.adicionar}>somar</button> 
+    <button onClick={props.subtrair}>subtrair</button>
+</div>
+
+depois devermos aterar as sequites estadias:
+
+<DisplayState valor={cont} adicionar={adicionar} subtrair={subtrair}></DisplayState>
