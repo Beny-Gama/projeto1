@@ -1,2 +1,47 @@
 variaveis GLOBAIS
-exitem vairais manieras de acoicar varivais globais no seu projeto. aogins gostão de usar local storage.
+
+Obs: Para entender essa aula, é nessaria saber sobre: Orientação a Objetos em javascript.
+
+Exitem vairais manieras de acoicar varivais globais no seu projeto. alguns gostão de usar local storage... depois é nessesairo aprender o que é melhor para usar em cada projeto. Nesse curso vamos aprender sobre classes globais javascript.
+
+Quando carregamos nosso projeto. Nos podemos carregar uma class. E adicionar elementos que tenham um modificador static. Nessas nossas class. Todo elemento static, ele tem um elemento fixo de memoria. ou seja, Quando eu estanciar essa class nomvamente. Ele não vai isntaciar em uma nova posição de memoria. Ele vai usar aquela posicão que já está isntaciada. ou sejá, o elemento static vale para todas as classes que usam os elememento que forem static. É uma maneira nativa do javascript de usar variaveis globais, sem precisar usar recorsos externos.
+
+precisamos criar um aquivo Globais.tsx no nosso components.
+
+export default class Globais{
+    
+}
+
+e adicionamos os elementos disponiveis:
+
+export default class Globais{
+    static canal="CFBcursos"
+    static curso=""
+    static ano="2024"
+}
+
+E importamos no inputs.tsx e na pagina useeffect e adicionamos X:
+
+import Globais from "@/components/Globais"
+
+
+e edicionar a seguinte tag no "HTML":
+
+<div>
+    <p>{Globais.canal}</p>
+    <p>{Globais.curso}</p>
+    <p>{Globais.ano}</p>
+</div>
+
+e declaramos a o useEffect() no nosso inputs.tsx 
+
+useEffect(()=>{
+        Globais.curso='React'
+    })
+
+
+Percebe que não ira alterar nada no nosso imput.tsx no primerio momento. Mas se voce alterar para outra pagina. pq isso esta acontacendo?
+
+lembrese que essa variabel global não é um static. a mudança dela não causa uma renterização na pagina.
+
+Ao trocarmos de pagina, veremso que essa varival sera alterada. Portado, a alteração de variavis simples, Não dispara renterização da paigina. Para rendelizar uma pagina é nessesairo fazer alteração.

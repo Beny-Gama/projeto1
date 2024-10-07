@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Topo from "@/components/Topo"
+import Globais from "@/components/Globais"
 
 const cursos=['Html','CSS','React','Javascript','Artuino','C++']
 
@@ -16,6 +17,10 @@ const jsonCurso=[
 export default function inputs() {
     const [nome,setNome]=useState("")
     const [curso,setCurso]=useState("")
+
+    useEffect(()=>{
+        Globais.curso='React'
+    })
     
     function fcurso() {
         return cursos.map((c:string)=>{
@@ -43,6 +48,11 @@ export default function inputs() {
             </div>
             <div>Nome digitado: {nome}</div>
             <div>Curos digitado: {curso}</div>
+            <div>
+                <p>{Globais.canal}</p>
+                <p>{Globais.curso}</p>
+                <p>{Globais.ano}</p>
+            </div>
         </div>
     )
 }
