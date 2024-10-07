@@ -1,0 +1,95 @@
+No ex020 aprendemos a usar a teg <imput> e agora vamos aprender a suar a tag <select> e como manipualar seus dados.
+
+o <select> tem uma estruta um pouco difernete mas na sua maioria é a menma coisa.
+
+a tag do <select> e pai da tag <option>
+
+<select>
+    <option value=""></option>
+    <option value="html">html</option>
+    <option value="React">React</option>
+    <option value="c++">c++</option>
+    <option value="javascript">javascript</option>
+    <option value="arduino">arduino</option>
+    <option value="CSS">CSS</option>
+</select>
+
+A estrutura é praticamente a mesma mas dessa vez anbientada no <select>
+
+    <select value={curso} onChange={(evt)=>{setCurso(evt.target.value)}}>
+
+
+
+ex022
+
+Imagine que temos um array:
+
+const cursos=['Html','CSS','React','Javascript','Artuino','C++']
+
+Uma das maneiras é inserindo um javascript dentro do nosso HTML:
+
+<select value={curso} onChange={(evt)=>{setCurso(evt.target.value)}}>
+    {
+    cursos.map((c:string)=>{
+        return <option value={c}>{`Curso de ${c}`}</option>
+        })
+    }
+</select>
+
+
+
+Outra maneiras é fazendo um função javascript.
+
+function fcurso() {
+    return cursos.map((c:string)=>{
+        return <option value={c}>{`Curso de ${c}`}</option>
+    })
+}
+
+ e depois istanciar no HTML:
+
+<select value={curso} onChange={(evt)=>{setCurso(evt.target.value)}}>
+    {
+        fcurso()
+    }
+</select>
+
+
+
+Outra maneria é adionado direto em uma const
+
+const ccursos = cursos.map((c:string)=>{
+        return <option value={c}>{`Curso de ${c}`}</option>
+    })
+
+<select value={curso} onChange={(evt)=>{setCurso(evt.target.value)}}>
+    {
+        ccursos
+    }
+</select>
+
+
+
+Agora imagine um objeto .json
+
+const jsonCurso=[
+    {curso: 'Html'},
+    {curso: 'CSS'},
+    {curso:'React'},
+    {curso: 'Javascript'},
+    {curso: 'Artuino'},
+    {curso: 'C++'}
+]
+
+Banta alterar nossa const ou function para essa manteira:
+
+const ccursos = jsonCurso.map((c:any)=>{
+        return <option value={c.curso}>{`Curso de ${c.curso}`}</option>
+    })
+
+function fcurso() {
+    return jsonCurso.map((c:any)=>{
+        return <option value={c.curso}>{`Curso de ${c.curso}`}</option>
+    })
+}
+Sendo c.curso a amaneira que os objetos no json estão sendo chamados.

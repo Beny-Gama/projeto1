@@ -1,0 +1,2 @@
+variaveis GLOBAIS
+exitem vairais manieras de acoicar varivais globais no seu projeto. aogins gostão de usar local storage.

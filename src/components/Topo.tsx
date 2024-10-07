@@ -36,6 +36,9 @@ export default function Topo(){
         <Link href={'/inputs/inputs'}>
            inputs
         </Link>
+        <Link href={'/useeffect/useeffect'}>
+           useeffect
+        </Link>
       </nav>
     </div>
   )

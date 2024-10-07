@@ -1,0 +1,62 @@
+useeffect()
+
+O useeffect() normalmante e usado para atividades que vam ser usadas no momeno em que estramos na pagina.
+
+a nivel de curiosidade se estanciarmos esse função:
+
+const [cont,setCont]=useState<number>(0)
+
+    useEffect(()=>{
+        let c=cont
+        c++
+        setCont(c)
+    })
+
+<button onClick={add}> +1 </button>
+
+se estaciar isso como esta escrito temos um loop infito no nosso codigo. Isso é interensa em codigo onde estão sendo geradas em tempo real.
+
+
+
+
+Imagine o segundo cenario, em que vc use uma variavel (no JS = let): 
+nesse casso uma variavel/let não aciona uma nova rendirzação de pagina.
+agora nosso <button> tem a mesma funcicionalidade mas com o codigo bem mais inchuto. sem o loop infito.
+
+let aux=0
+
+ useEffect(()=>{
+        aux++
+    })
+
+<button onClick={add}> +1 </button>
+
+
+Nesse ternceiro cenario, a useEffect() so ira funcionar quando chama
+useEffect(()=>{
+Basta colocarmos nos [] ao final da nossa função useEffect().
+
+        let c=cont
+        c++
+        setCont(c)
+        },[])
+
+
+
+Imagine o quarto cenario, onde queremos que acione a função apenas uma vez quanado a pagina for apertado o botão:
+
+const [cont,setCont]=useState<number>(0)
+const [aux,setAux]=useState<number>(0)
+
+useEffect(()=>{
+    alert('UseEffect disparado')
+},[aux])
+
+function add(){
+    let a=aux
+    a++
+    setAux(a)
+}
+
+<p>{`valor de cont: ${cont}`}</p>
+<p>{`valor de aux: ${aux}`}</p>
