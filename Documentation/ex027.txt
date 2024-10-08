@@ -1,0 +1,9 @@
+Temos que bildar nosso projeto, para isso temos que usar as sequintes finção na raiz do nosso projeto: no CMD usamos:
+
+    npm run build
+
+devemos verificar os possiveis erros e alterar na nossa aplicacão.
+
+A tipagem :any não esta mais funcionado nas novas verções no Typescripet com react.next para bildar nosso projeto. Ao inver de :any devemos usar a tipagem :React.ReactNode ou espesificar esatamente o que esta escrito em cada projeto
+
+    Error: Unexpected any. Specify a different type. @typescript-eslint/no-explicit-any 

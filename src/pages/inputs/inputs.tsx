@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import Topo from "@/components/Topo"
 import Globais from "@/components/Globais"
 
-const cursos=['Html','CSS','React','Javascript','Artuino','C++']
+// const cursos=['Html','CSS','React','Javascript','Artuino','C++']
 
 
 const jsonCurso=[
@@ -14,7 +14,7 @@ const jsonCurso=[
     {curso: 'C++'}
 ]
 
-export default function inputs() {
+export default function Inputs() {
     const [nome,setNome]=useState("")
     const [curso,setCurso]=useState("")
 
@@ -22,13 +22,13 @@ export default function inputs() {
         Globais.curso='React'
     })
     
-    function fcurso() {
-        return cursos.map((c:string)=>{
-            return <option value={c}>{`Curso de ${c}`}</option>
-        })
-    }
-    const ccursos = jsonCurso.map((c:any)=>{
-        return <option value={c.curso}>{`Curso de ${c.curso}`}</option>
+    // function fcurso() {
+    //     return cursos.map((c:string)=>{
+    //         return <option value={c} key={Math.random()*999999}>{`Curso de ${c}`}</option>
+    //     })
+    // }
+    const ccursos = jsonCurso.map((c)=>{
+        return <option value={c.curso} key={Math.random()*999999}>{`Curso de ${c.curso}`}</option>
     })
 
     return (

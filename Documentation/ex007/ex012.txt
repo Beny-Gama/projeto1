@@ -1,6 +1,6 @@
 Renderizando componentes com objetos de um array
 
-Para percor um arquivo tipo JSON é nessesario usar as sequintes formatação:
+Para procurar um arquivo tipo JSON é nessesario usar as sequintes formatação:
 const produtos=[
   {
     produto:'mause',

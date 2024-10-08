@@ -1,10 +1,6 @@
 import Link from "next/link"
-const nome='bruno berardo'
-let canal='bgama18'
 
-function caldDesc(v:number,d:number){
-  return v-d
-}
+const canal='bgama18'
 
 export default function Topo(){
   return (
@@ -27,19 +23,19 @@ export default function Topo(){
         }}>
           Produtos
         </Link>
-        <Link href={'/teste/teste'}>
+        <Link href={'/teste/Teste'}>
           Teste  
         </Link>
-        <Link href={'/usestate/usestate'}>
+        <Link href={'/usestate/Usestate'}>
            State
         </Link>
-        <Link href={'/inputs/inputs'}>
+        <Link href={'/inputs/Inputs'}>
            inputs
         </Link>
-        <Link href={'/useeffect/useeffect'}>
+        <Link href={'/useeffect/Useeffect'}>
            useeffect
         </Link>
-        <Link href={'/filtragem/filtragem'}>
+        <Link href={'/filtragem/Filtragem'}>
            filtragem
         </Link>
       </nav>

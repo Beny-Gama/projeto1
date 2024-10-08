@@ -1,6 +1,6 @@
 interface DisplayStateProps{
-    valor:number
-    fvalor:any
+    valor:number,
+    fvalor: (value: number) => void,
 }
 
 export default function DisplayState(props:DisplayStateProps) {

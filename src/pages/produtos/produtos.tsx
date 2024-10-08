@@ -6,9 +6,9 @@ function caldDesc(v: number, d: number) {
   return v - d;
 }
 
-function caldDesc2(v: number, d: number) {
-  return v - d / 2;
-}
+// function caldDesc2(v: number, d: number) {
+//   return v - d / 2;
+// }
 
 const produtos = [
   {
@@ -48,7 +48,7 @@ const produtos = [
   },
 ];
 
-export default function produtosPagina() {
+export default function ProdutosPagina() {
 
   const router=useRouter()
   const {nome,curso}=router.query
@@ -60,10 +60,10 @@ export default function produtosPagina() {
         <Topo/>
       <div className='flex justify-center gap-3' >
             {
-              produtos.map((e:any)=>{
+              produtos.map((e)=>{
                 if(e.disponivel){
                   return(
-                    <Card key={e.id} produto={e.produto} valor={e.valor} desconto={e.desconto} funcao={caldDesc}>teste</Card>
+                    <Card key={e.id} produto={e.produto} valor={e.valor} desconto={e.desconto} funcao={caldDesc}>tete 2</Card>
                   )}})}
         </div>
     </div>
