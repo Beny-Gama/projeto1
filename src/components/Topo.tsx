@@ -39,6 +39,9 @@ export default function Topo(){
         <Link href={'/useeffect/useeffect'}>
            useeffect
         </Link>
+        <Link href={'/filtragem/filtragem'}>
+           filtragem
+        </Link>
       </nav>
     </div>
   )

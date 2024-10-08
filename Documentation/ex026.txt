@@ -1,0 +1,62 @@
+criando uma api json com node-red
+
+isntalamos no node-red na nossa maquina:
+
+sudo npm install -g --unsafe-perm node-red
+
+
+inniciamnos o node-red com a porta 8080:
+
+sudo node-red -p 8080
+
+depois criamos nossa api com:
+
+http in
+     Method: GET
+     URL: carros
+
+depois adicionamos uma function no meio. no metodo: On Messange, adicionamos nosso cogigo formato json:
+
+msg.payload = [
+    {id:0, categ:'Esporte', valor:'120000.00', modelo:'golf GTI'},
+    {id:1, categ:'Esporte', valor:'200000.00', modelo:'Camaro'},
+    {id:2, categ:'SUV', valor:'100000.00', modelo:'HRV'},
+    {id:3, categ:'SUV', valor:'100000.00', modelo:'T-Cross'},
+    {id:4, categ:'Utilitario', valor:'180000.00', modelo:'Hillux'},
+    {id:5, categ:'Utilitario', valor:'160000.00', modelo:'Ranger'},
+]
+
+return msg;
+
+depois adicionamos o: http response. sem nehuma alteração.
+
+e no canto uperior direito pazemos deploy:
+
+agora com http://127.0.0.1:8080/carros temos nossa api rodamdo local.
+
+
+agora na nossa filtragem.tsx, fora da function pricipal add variavel carros:
+
+let carros:any = '' 
+
+
+Depois usamos nosso useEffect() para import uma api json:
+
+fetch === é a maneira que nos consumimos a api no formato javascrept:
+
+
+useEffect(()=>{
+        fetch('http://127.0.0.1:8080/carros')
+        .then(res=>res.json())
+        .then(res=>{
+            carros=res
+        })
+    },[])
+
+
+podem adicinar uma validacão.
+
+
+let listaPronta = false
+
+listaPronta=true
