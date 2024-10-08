@@ -15,7 +15,7 @@ export default function Topo(){
           Home
         </Link>
         <Link href={{
-          pathname:'/produtos/produtos',
+          pathname:'/produtos/Produtos',
           query:{
             nome:'bruno',
             curso: 'react next.js'
